@@ -35,45 +35,52 @@ def send_email(sender_name, sender_email, sender_password, receiver_email, subje
     smtp_username = sender_email
     smtp_password = sender_password
 
-    # Create a secure connection to the SMTP server
-    server = smtplib.SMTP(smtp_server, port)
-    server.starttls()
-    server.login(smtp_username, smtp_password)
+    try:
+        # Create a secure connection to the SMTP server
+        server = smtplib.SMTP(smtp_server, port)
+        server.starttls()
+        server.login(smtp_username, smtp_password)
 
-    # Create a multipart message and set headers
-    msg = MIMEMultipart()
-    msg['From'] = f"{sender_name} <{sender_email}>"
-    msg['To'] = receiver_email
-    msg['Subject'] = subject
+        # Create a multipart message and set headers
+        msg = MIMEMultipart()
+        msg['From'] = f"{sender_name} <{sender_email}>"
+        msg['To'] = receiver_email
+        msg['Subject'] = subject
 
-    # Add message body
-    msg.attach(MIMEText(message, 'plain'))
+        # Add message body
+        msg.attach(MIMEText(message, 'plain'))
 
-    # Open the file to be sent
-    with open(attachment_path, "rb") as attachment:
-        # Add the file as application/octet-stream
-        part = MIMEBase("application", "octet-stream")
-        part.set_payload(attachment.read())
+        # Open the file to be sent
+        with open(attachment_path, "rb") as attachment:
+            # Add the file as application/octet-stream
+            part = MIMEBase("application", "octet-stream")
+            part.set_payload(attachment.read())
 
-    # Encode file in ASCII characters to send by email    
-    encoders.encode_base64(part)
+        # Encode file in ASCII characters to send by email    
+        encoders.encode_base64(part)
 
-    # Add header as key/value pair to attachment part
-    part.add_header(
-        "Content-Disposition",
-        f"attachment; filename= {attachment_path}",
-    )
+        # Add header as key/value pair to attachment part
+        part.add_header(
+            "Content-Disposition",
+            f"attachment; filename= {attachment_path}",
+        )
 
-    # Add attachment to message
-    msg.attach(part)
+        # Add attachment to message
+        msg.attach(part)
 
-    # Send the email
-    server.send_message(msg)
+        # Send the email
+        server.send_message(msg)
 
-    # Close the connection
-    server.quit()
-    print(f"Email sent successfully to {receiver_email}.")
-    
+        # Close the connection
+        server.quit()
+
+        # Print success log
+        print(f"Email sent successfully to {receiver_email}.")
+
+    except Exception as e:
+        # Print failure log
+        print(f"Failed to send email to {receiver_email}: {str(e)}")
+
 def create_dummy_email_template():
     # Define the city and email address
     city = "Hyderabad"
