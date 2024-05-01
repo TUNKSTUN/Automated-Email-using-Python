@@ -56,9 +56,9 @@ def send_email(sender_name, sender_email, sender_password, receiver_email, subje
         msg.attach(message_text)
 
         # Add badges in HTML format
-        badges_html = "<html><body><p>_____</p><h4>"
+        badges_html = "<html><body><p>---</p><h4>"
         for badge in badges:
-            badges_html += f"<img src='{badge}' alt='Badge' style='width:200px;height:auto;'>"
+            badges_html += f"<img src='{badge}' alt='Badge' style='width:300px;height:auto;'>"
         badges_html += "<h4></body></html>"
         msg.attach(MIMEText(badges_html, 'html'))
 
