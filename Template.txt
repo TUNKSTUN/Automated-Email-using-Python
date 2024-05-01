@@ -21,7 +21,7 @@
 </head>
 <body>
   <p>Dear <strong>[name]</strong>,</p>
-  <p>I hope this email finds you well. I am reaching out to inquire about <strong>Network Engineer</strong> openings available at <strong>[Company]</strong>. With two years of practical experience in the IT industry, i have acquired valuable skills in network infrastructure, cloud computing, virtualization, and security while utilizing technologies like <strong>Cisco</strong> and <strong>Fortinet</strong>.</p>
+  <p>I hope this email finds you well. I am reaching out to inquire about <strong>Network Engineer</strong> openings available at <strong>[Company]</strong>. With two years of experience in the IT industry, i have acquired valuable skills in network infrastructure, cloud computing, virtualization, and security while utilizing technologies like <strong>Cisco</strong> and <strong>Fortinet</strong>.</p>
   <p>If you are seeking a candidate with skills in the following areas:</p>
   <ul>
     <li><strong>Network Operations:</strong> Cisco Technologies, Unifi, Routing & Switching, Troubleshooting.</li>

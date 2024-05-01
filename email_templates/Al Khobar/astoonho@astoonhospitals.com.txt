@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Template</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <style>
+  p {
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+    .dancing-script {
+      font-family: "Dancing Script", cursive;
+      font-weight: 600;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <p>Dear <strong>Raheemuddin Syed</strong>,</p>
+  <p>I hope this email finds you well. I am reaching out to inquire about <strong>Network Engineer</strong> openings available at <strong>Astoon Hospital</strong>. With two years of practical experience in the IT industry, i have acquired valuable skills in network infrastructure, cloud computing, virtualization, and security while utilizing technologies like <strong>Cisco</strong> and <strong>Fortinet</strong>.</p>
+  <p>If you are seeking a candidate with skills in the following areas:</p>
+  <ul>
+    <li><strong>Network Operations:</strong> Cisco Technologies, Unifi, Routing & Switching, Troubleshooting.</li>
+    <li><strong>Remote Management:</strong> SDWAN, MPLS, VXLAN + EVPN, Azure & AWS Cloud.</li>
+    <li><strong>Server & Network Virtualization:</strong> VMware vSphere, NSX, Change & Patch Management.</li>
+    <li><strong>Server Management:</strong> Windows ADDS, DNS & DHCP server, Hyper-V, Group Policy, Backup.</li>
+    <li><strong>Network Security:</strong> Fortinet, VPN, SSL/TLS, HIPAA, 802.1x, RADIUS, Incident Management.</li>
+  </ul>
+  <p>Then I believe I am an ideal candidate for your enterprise. If there are any present roles in your company that aligns with my portfolio, i'd be happy to learn more about the requirements and expectations for the role. I am equipped with the necessary competencies and skills to contribute significantly to the success of your team.</p>
+  <p>While appreciative of my previous opportunities, I'd welcome new adversities that allow me to further utilize and enhance my expertise and knowledge. I have enclosed my resume for your attentive consideration. I am hopeful for the opportunity to explore how my expertise may contribute positively and benefit <strong>Astoon Hospital</strong>.</p>
+  <p>Thank you for considering my inquiry, and I look forward to any information you can provide.</p>
+  <p><strong>Sincerely,</strong></p>
+  <span class="dancing-script">Yahya</span>
+</body>
+</html>
