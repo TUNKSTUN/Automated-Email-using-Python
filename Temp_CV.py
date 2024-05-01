@@ -192,7 +192,7 @@ def main():
     sender_email = os.environ.get('SENDER_EMAIL')
     sender_password = os.environ.get('SENDER_PASSWORD')
     subject_template = 'Application: Network Engineer Position at {}'
-    badges = ['https://github.com/TUNKSTUN/Automated-Email-using-Python/blob/main/BADGES_.png?raw=true']
+    badges = ['https://github.com/TUNKSTUN/Automated-Email-using-Python/blob/main/BADGES.png?raw=true']
 
     # Read message from each text file in the selected city directory
     city_folder = f'email_templates/{selected_city}'
