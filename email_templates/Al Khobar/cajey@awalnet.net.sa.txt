@@ -1,17 +1,39 @@
-
-Dear Cajetan Fernandes,
-
-I am reaching out to inquire about Network Engineering positions available at Abdullah H. Al-Shuwayer. With 2 years of practical experience in the IT industry, acquired with certifications in CCNP, AWS & Azure, I possess the necessary skills and knowledge to excel in this role. If you are seeking a candidate that has necessary skills in
-
-- Network Operations: Cisco Technoogies, Unifi, Routing & Switching, Incident Management.
-- Remote Management: SDWAN, MPLS, VXLAN + EVPN, Azure & AWS Cloud.
-- Server & Network Virtualization: VMware vSphere, NSX, Change & Patch Management
-- Server Management: Windows ADDS, DNS & DHCP server, Hyper-V, Group Policy, Backup.
-- Network Security: Fortinet, VPN, SSL/TLS, HIPAA, 802.1x, RADIUS.
-
-Then I believe I am an ideal fit for your organization. i am equipped with the necessary tools and skills to excel in this role and contribute to the success of your team.
-
-While appreciative of my previous opportunities, I am eager to explore new challenges that allow me to further contribute my skills and knowledge. Enclosed is my resume for your review. I would welcome the chance to discuss how my qualifications can benefit Abdullah H. Al-Shuwayer.
-Thank you for your consideration.
-
-Warm Regards,
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Template</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <style>
+  p {
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+    .dancing-script {
+      font-family: "Dancing Script", cursive;
+      font-weight: 600;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <p class="fade-in">Dear <strong>Cajetan Fernandes</strong>,</p>
+  <p class="fade-in">I am writing to express my keen interest in the <strong>Network Engineer</strong> positions available at <strong>Abdullah H. Al-Shuwayer</strong>. With two years of practical experience in the IT industry, acquiring skills in network infrastructure, cloud computing, virtualization, and security while utilizing technologies like <strong>Cisco</strong> and <strong>Fortinet</strong>.</p>
+  <p class="fade-in">If you are seeking a candidate with proficiency in the following areas:</p>
+  <ul class="fade-in">
+    <li><strong>Network Operations:</strong> Cisco Technologies, Unifi, Routing & Switching, Troubleshooting.</li>
+    <li><strong>Remote Management:</strong> SDWAN, MPLS, VXLAN + EVPN, Azure & AWS Cloud.</li>
+    <li><strong>Server & Network Virtualization:</strong> VMware vSphere, NSX, Change & Patch Management.</li>
+    <li><strong>Server Management:</strong> Windows ADDS, DNS & DHCP server, Hyper-V, Group Policy, Backup.</li>
+    <li><strong>Network Security:</strong> Fortinet, VPN, SSL/TLS, HIPAA, 802.1x, RADIUS, Incident Management.</li>
+  </ul>
+  <p class="fade-in">I believe I am an ideal candidate for your esteemed organization. I am equipped with the necessary tools and skills to contribute significantly to the success of your team.</p>
+  <p class="fade-in">While appreciative of my previous opportunities, I am eager to embrace new challenges that allow me to further utilize and enhance my skills and knowledge. Please find my resume enclosed for your review. I would greatly appreciate the opportunity to discuss how my qualifications can benefit <strong>Abdullah H. Al-Shuwayer</strong>.</p>
+  <p class="fade-in">Thank you for your consideration, and I look forward to hearing from you.</p>
+  <p class="fade-in"><strong>Sincerely,</strong></p>
+  <span class="dancing-script fade-in">Yahya</span>
+</body>
+</html>

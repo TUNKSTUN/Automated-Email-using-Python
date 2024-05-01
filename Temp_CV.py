@@ -6,13 +6,17 @@ from email import encoders
 import os
 import pandas as pd
 
-def extract_company_name(text):
-    start_index = text.find("at ") + len("at ")
-    end_index = text.find(". ", start_index)
+def extract_company_name(html_text):
+    start_index = html_text.find("at <strong>")
+    if start_index == -1:
+        return None
+    end_index = html_text.find("</strong>.", start_index + len("at <strong>"))
     if end_index == -1:
-        end_index = text.find(". ", start_index)
-    company_name = text[start_index:end_index].strip()
+        return None
+    company_name = html_text[start_index + len("at <strong>"):end_index].strip()
     return company_name
+
+
 
 def generate_email_template(name, company, template):
     # Replace placeholders in the template with actual data
@@ -48,14 +52,14 @@ def send_email(sender_name, sender_email, sender_password, receiver_email, subje
         msg['Subject'] = subject
 
         # Add message body
-        message_text = MIMEText(message, 'plain')
+        message_text = MIMEText(message, 'html')
         msg.attach(message_text)
 
         # Add badges in HTML format
-        badges_html = "<html><body><p>Badges:</p><ul>"
+        badges_html = "<html><body><p>_____</p><h4>"
         for badge in badges:
-            badges_html += f"<li><img src='{badge}' alt='Badge' style='width:100px;height:auto;'></li>"
-        badges_html += "</ul></body></html>"
+            badges_html += f"<img src='{badge}' alt='Badge' style='width:200px;height:auto;'>"
+        badges_html += "<h4></body></html>"
         msg.attach(MIMEText(badges_html, 'html'))
 
         # Open the file to be sent
@@ -188,7 +192,7 @@ def main():
     sender_email = os.environ.get('SENDER_EMAIL')
     sender_password = os.environ.get('SENDER_PASSWORD')
     subject_template = 'Application: Network Engineer Position at {}'
-    badges = ['https://github.com/TUNKSTUN/Automated-Email-using-Python/blob/main/CCNP_Enterprise_large-removebg-preview.png?raw=true', 'https://github.com/TUNKSTUN/Automated-Email-using-Python/blob/main/AZ-305-removebg-preview%20(1).png?raw=true', 'https://github.com/TUNKSTUN/Automated-Email-using-Python/blob/main/image-removebg-preview.png?raw=true']  # List of badge URLs
+    badges = ['https://github.com/TUNKSTUN/Automated-Email-using-Python/blob/main/BADGES.png?raw=true']
 
     # Read message from each text file in the selected city directory
     city_folder = f'email_templates/{selected_city}'
