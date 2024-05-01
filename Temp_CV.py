@@ -188,7 +188,7 @@ def main():
     sender_email = os.environ.get('SENDER_EMAIL')
     sender_password = os.environ.get('SENDER_PASSWORD')
     subject_template = 'Application: Network Engineer Position at {}'
-    badges = ['https://images.credly.com/size/680x680/images/07f70c56-f067-458e-bbe5-736f055f0cce/CCNP_Enterprise_large.png', 'badge2_url', 'badge3_url']  # List of badge URLs
+    badges = ['https://github.com/TUNKSTUN/Automated-Email-using-Python/blob/main/CCNP_Enterprise_large-removebg-preview.png?raw=true', 'https://github.com/TUNKSTUN/Automated-Email-using-Python/blob/main/AZ-305-removebg-preview%20(1).png?raw=true', 'https://github.com/TUNKSTUN/Automated-Email-using-Python/blob/main/image-removebg-preview.png?raw=true']  # List of badge URLs
 
     # Read message from each text file in the selected city directory
     city_folder = f'email_templates/{selected_city}'
