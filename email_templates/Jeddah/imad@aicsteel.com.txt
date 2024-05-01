@@ -1,18 +1,17 @@
 
 Dear Imad Elkassih,
 
-I am writing to inquire about any job vacancies at AIC that may align with my skills and experience. I am a self-motivated and progress-driven Network Engineer with an extensive background in IT Industry focused on cloud and networking domain. I have developed and executed strategies that I believe will bring value to your company.
+I am reaching out to inquire about Network Engineering positions available at AIC. With 2 years of practical experience in the IT industry, acquired with certifications in CCNP, AWS & Azure, I possess the necessary skills and knowledge to excel in this role. If you are seeking a candidate that has necessary skills in
 
-Skilled Network Engineer with 2 years of experience in the IT industry. Well adept at handling various responsibilities by prioritizing tasks, establishing clear deadlines, and finding creative solutions to eliminate obstacles. I am a quick learner and possess a strong foundation in networking principles. My experience has equipped me with the necessary tools to succeed in this position:
+- Network Operations: Cisco Technoogies, Unifi, Routing & Switching, Incident Management.
+- Remote Management: SDWAN, MPLS, VXLAN + EVPN, Azure & AWS Cloud.
+- Server & Network Virtualization: VMware vSphere, NSX, Change & Patch Management
+- Server Management: Windows ADDS, DNS & DHCP server, Hyper-V, Group Policy, Backup.
+- Network Security: Fortinet, VPN, SSL/TLS, HIPAA, 802.1x, RADIUS.
 
-- Network Administration (CCNP Certified).
-- Network Remote Management (SDWAN).
-- Server Deployment (AWS & Azure Certified).
-- Server & Network Virtualization (VMware).
-- Server Management (Windows Servers).
+Then I believe I am an ideal fit for your organization. i am equipped with the necessary tools and skills to excel in this role and contribute to the success of your team.
 
-While I am grateful for the opportunities afforded to me in my prior position, I am ready to explore new career path that offers new challenges for me to put my skills to use. 
-I've attached my resume with additional details of my work experience and qualifications. If you have any questions, please feel free to contact me.
+While appreciative of my previous opportunities, I am eager to explore new challenges that allow me to further contribute my skills and knowledge. Enclosed is my resume for your review. I would welcome the chance to discuss how my qualifications can benefit AIC.
+Thank you for your consideration.
 
 Warm Regards,
-Yahya

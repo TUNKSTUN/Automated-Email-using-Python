@@ -8,9 +8,9 @@ import pandas as pd
 
 def extract_company_name(text):
     start_index = text.find("at ") + len("at ")
-    end_index = text.find("that", start_index)
+    end_index = text.find(". ", start_index)
     if end_index == -1:
-        end_index = text.find("that", start_index)
+        end_index = text.find(". ", start_index)
     company_name = text[start_index:end_index].strip()
     return company_name
 
@@ -28,7 +28,7 @@ def read_template(file_path):
         print(f"Error: Template file '{file_path}' not found.")
         return None
 
-def send_email(sender_name, sender_email, sender_password, receiver_email, subject, message, attachment_path):
+def send_email(sender_name, sender_email, sender_password, receiver_email, subject, message, attachment_path, badges):
     # Set up the SMTP server
     smtp_server = 'smtp.gmail.com'
     port = 587  # For starttls
@@ -48,7 +48,15 @@ def send_email(sender_name, sender_email, sender_password, receiver_email, subje
         msg['Subject'] = subject
 
         # Add message body
-        msg.attach(MIMEText(message, 'plain'))
+        message_text = MIMEText(message, 'plain')
+        msg.attach(message_text)
+
+        # Add badges in HTML format
+        badges_html = "<html><body><p>Badges:</p><ul>"
+        for badge in badges:
+            badges_html += f"<li><img src='{badge}' alt='Badge' style='width:100px;height:auto;'></li>"
+        badges_html += "</ul></body></html>"
+        msg.attach(MIMEText(badges_html, 'html'))
 
         # Open the file to be sent
         with open(attachment_path, "rb") as attachment:
@@ -82,36 +90,45 @@ def send_email(sender_name, sender_email, sender_password, receiver_email, subje
         print(f"Failed to send email to {receiver_email}: {str(e)}")
 
 def create_dummy_email_template():
+    template = read_template('Template.txt')
+
+    if template is None:
+        return
+
     # Define the city and email address
     city = "Hyderabad"
-    email_address = "johnwick4learning@gmail.com"
+    dummy_email_address = "johnwick4learning@gmail.com"
+    name = "Fahad"
+    company = "Disney Land"
 
-    # Define the content of the email template
-    email_content = "Dear John, at Johnson Baby Shampoo that."
+    email_template = generate_email_template(name, company, template)
 
     # Construct the directory path
     directory = os.path.join("email_templates", city)
 
     # Construct the file path
-    file_path = os.path.join(directory, f"{email_address}.txt")
-
-    # Check if the file already exists
-    if os.path.isfile(file_path):
-        print(f"Dummy email template already exists: {file_path}")
-        return
+    file_path = os.path.join(directory, f"{dummy_email_address}.txt")
 
     # Check if the directory exists, and create it if it doesn't
     if not os.path.exists(directory):
         os.makedirs(directory)
 
+    # Check if the file already exists, and delete it
+    if os.path.isfile(file_path):
+        print(f"File Exists!")
+        return file_path
+
     # Write the content to the file
     with open(file_path, "w") as file:
-        file.write(email_content)
-
-    print(f"Dummy email template created: {file_path}")
+        file.write(email_template)
+        print(f"Dummy email template created: {file_path}")
 
 def main():
     create_dummy_email_template()
+    # Load email template from Template.txt
+    template = read_template('Template.txt')
+    if template is None:
+        return
     # Define cities
     cities = [
         "Jubail", "Dammam", "Al Khobar", "Jeddah", "Riyadh",
@@ -123,10 +140,7 @@ def main():
         city_folder = os.path.join('email_templates', city)
         os.makedirs(city_folder, exist_ok=True)
 
-    # Load email template from Template.txt
-    template = read_template('Template.txt')
-    if template is None:
-        return
+    
 
     # Load the Excel file
     df = pd.read_excel('Companies_KSA.xls')
@@ -168,14 +182,13 @@ def main():
     city_index = int(input("Select a city (enter the number): "))
     selected_city = cities[city_index - 1]
 
-    # Set up email parameters
+        # Set up email parameters
     attachment_path = 'Yahya.pdf'  # Path to your CV file
     sender_name = 'Yahya'
-    # Get sender email from the name of the text files in the city directory
     sender_email = os.environ.get('SENDER_EMAIL')
     sender_password = os.environ.get('SENDER_PASSWORD')
-    # Set email subject template
     subject_template = 'Application: Network Engineer Position at {}'
+    badges = ['https://images.credly.com/size/680x680/images/07f70c56-f067-458e-bbe5-736f055f0cce/CCNP_Enterprise_large.png', 'badge2_url', 'badge3_url']  # List of badge URLs
 
     # Read message from each text file in the selected city directory
     city_folder = f'email_templates/{selected_city}'
@@ -193,7 +206,8 @@ def main():
             subject = subject_template.format(company_name)
 
             # Send email to each recipient
-            send_email(sender_name, sender_email, sender_password, receiver_email, subject, message, attachment_path)
+            send_email(sender_name, sender_email, sender_password, receiver_email, subject, message, attachment_path, badges)
+
 
 if __name__ == "__main__":
     main()
